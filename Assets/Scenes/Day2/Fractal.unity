@@ -148,9 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a06da4e9034774880e018bfdf26ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fractal
-  fractalCycles: 3
+  fractalCycles: 5
   scaleFactor: 0.5
-  childOffset: 1
+  childOffset: 0.9
 --- !u!4 &987086389
 Transform:
   m_ObjectHideFlags: 0
@@ -252,8 +252,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556520918}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17909262, y: 0.32557622, z: -0.05843127, w: -0.92655915}
-  m_LocalPosition: {x: 1.1923875, y: 0.9702746, z: -7.6537557}
+  m_LocalRotation: {x: -0.14697081, y: 0.32293403, z: -0.046363197, w: -0.93379}
+  m_LocalPosition: {x: 2.103679, y: 2.0000877, z: -9.227472}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

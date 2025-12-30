@@ -11,27 +11,33 @@ public class RecursiveFractal : MonoBehaviour
 
     public float childOffset = 1.5f;
 
-    private int currentDepth = 1;
-
     void Start()
     {
-        GenerateFractal(transform, currentDepth);
+        Regenerate();
     }
 
-    void GenerateFractal(Transform parent, int depth)
+    void Regenerate()
+    {
+        // Clear old fractal
+        for (int i = transform.childCount - 1; i >= 0; i--)
+            Destroy(transform.GetChild(i).gameObject);
+
+        // Root has no incoming direction
+        GenerateFractal(transform, 1, Vector3.zero);
+    }
+
+    void GenerateFractal(Transform parent, int depth, Vector3 cameFrom)
     {
         if (depth > fractalCycles)
             return;
 
-        // Create cube
         GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-
         cube.transform.parent = parent;
         cube.transform.localPosition = Vector3.zero;
         cube.transform.localRotation = Quaternion.identity;
-        cube.transform.localScale = Vector3.one * Mathf.Pow(scaleFactor, depth - 1);
+        cube.transform.localScale =
+            Vector3.one * Mathf.Pow(scaleFactor, depth - 1);
 
-        // Stop recursion at max depth
         if (depth == fractalCycles)
             return;
 
@@ -47,13 +53,17 @@ public class RecursiveFractal : MonoBehaviour
 
         foreach (Vector3 dir in directions)
         {
+            // Skip going back where we came from
+            if (dir == -cameFrom)
+                continue;
+
             GameObject childHolder = new GameObject("Depth_" + (depth + 1));
             childHolder.transform.parent = cube.transform;
             childHolder.transform.localPosition =
                 dir * childOffset * Mathf.Pow(scaleFactor, depth - 1);
             childHolder.transform.localRotation = Quaternion.identity;
 
-            GenerateFractal(childHolder.transform, depth + 1);
+            GenerateFractal(childHolder.transform, depth + 1, dir);
         }
     }
 }
