@@ -63,4 +63,10 @@ public class MovePlayer : MonoBehaviour
             anim.SetTrigger("Jump");
         }
     }
+
+    public void Die()
+    {
+        Debug.Log("Player Died");
+        gameObject.SetActive(false);
+    }
 }

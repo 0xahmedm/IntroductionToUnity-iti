@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;      // Player
-    public Vector3 offset;        // Camera offset
+    public Transform Player;
+    public Vector3 CamOffset;
     public float smoothSpeed = 5f;
 
     public Vector2 minBounds;
@@ -21,9 +21,9 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        if (target == null) return;
+        if (Player == null) return;
 
-        Vector3 desiredPosition = target.position + offset;
+        Vector3 desiredPosition = Player.position + CamOffset;
 
         float clampedX = Mathf.Clamp(
             desiredPosition.x,
@@ -37,7 +37,7 @@ public class CameraFollow : MonoBehaviour
             maxBounds.y - camHalfHeight
         );
 
-        Vector3 finalPosition = new Vector3(clampedX, clampedY, offset.z);
+        Vector3 finalPosition = new Vector3(clampedX, clampedY, CamOffset.z);
 
         transform.position = Vector3.Lerp(
             transform.position,
@@ -45,21 +45,4 @@ public class CameraFollow : MonoBehaviour
             smoothSpeed * Time.deltaTime
         );
     }
-
-    /* void LateUpdate()
-     {
-         if (target == null) return;
-
-         Vector3 desiredPosition = new Vector3(target.position.x,
-             transform.position.y, transform.position.z);
-
-         desiredPosition = target.position + offset;
-         Vector3 smoothedPosition = Vector3.Lerp(
-             transform.position,
-             desiredPosition,
-             smoothSpeed * Time.deltaTime
-         );
-
-         transform.position = smoothedPosition;
-     }*/
 }
