@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Day1/Staircase.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Day1/City.unity
     guid: aa88a873a1fcb984695a40b801daa19c
+  - enabled: 1
+    path: Assets/Scenes/2D Platformer.unity
+    guid: f65fbd9ef492ed94eaf7eb50112ec23c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

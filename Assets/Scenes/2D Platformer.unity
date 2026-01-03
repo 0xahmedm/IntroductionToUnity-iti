@@ -3865,7 +3865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovePlayer
   speed: 5
-  jumpForce: 8
+  jumpForce: 6.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4034,7 +4034,7 @@ Transform:
   m_GameObject: {fileID: 1202719146}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: -0.6948716, z: 0}
+  m_LocalPosition: {x: -6.96, y: -0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4632,7 +4632,7 @@ GameObject:
   - component: {fileID: 1650702894}
   - component: {fileID: 1650702893}
   - component: {fileID: 1650702896}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bouncy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4813,7 +4813,7 @@ TilemapCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
@@ -4907,7 +4907,7 @@ AreaEffector2D:
     m_Bits: 4294967295
   m_UseGlobalAngle: 0
   m_ForceAngle: 90
-  m_ForceMagnitude: 10
+  m_ForceMagnitude: 200
   m_ForceVariation: 0
   m_ForceTarget: 0
   m_LinearDamping: 0
@@ -5025,7 +5025,7 @@ GameObject:
   - component: {fileID: 1705272546}
   - component: {fileID: 1705272545}
   - component: {fileID: 1705272544}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
