@@ -12,18 +12,24 @@ public class MovePlayer : MonoBehaviour
     private Animator anim;
     private bool isGrounded;
     private float moveX;
+
+    public GameObject inventoryPanel;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        //groundCheck = GetComponentInChildren<GameObject>().transform; 
     }
 
     void Update()
     {
         HandleInput();
-        HandleAnimation();
         Jump();
+        HandleAnimation();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+        }
     }
 
     void FixedUpdate()
@@ -50,7 +56,6 @@ public class MovePlayer : MonoBehaviour
     {
         anim.SetBool("isRunning", moveX != 0);
         anim.SetBool("isGrounded", isGrounded);
-
     }
 
     void Jump()
